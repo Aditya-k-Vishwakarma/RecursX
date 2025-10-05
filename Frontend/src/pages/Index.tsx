@@ -3,9 +3,10 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Services } from "@/components/Services";
 import { Process } from "@/components/Process";
-import { Industries } from "@/components/Industries";
+import { Founders } from "@/components/Founders";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -15,9 +16,10 @@ const Index = () => {
       <About />
       <Services />
       <Process />
-      <Industries />
+      <Founders />
       <WhyChooseUs />
       <Contact />
+      <Footer />
     </div>
   );
 };

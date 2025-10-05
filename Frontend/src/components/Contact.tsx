@@ -138,12 +138,6 @@ export const Contact = () => {
             </div>
           </form>
         </div>
-
-        <div className="text-center mt-8 sm:mt-12 text-muted-foreground">
-          <p className="text-xs sm:text-sm">
-            © 2025 RecursX Innovations. Building the future with AI, one intelligent solution at a time.
-          </p>
-        </div>
       </div>
     </footer>
   );

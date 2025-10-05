@@ -93,27 +93,34 @@ const AIAssistantPopup = () => {
       synthRef.current.cancel();
       
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 0.9;
-      utterance.pitch = 1.2; // Higher pitch for female voice
+      utterance.rate = 0.7; // Slower speech rate
+      utterance.pitch = 1.0; // Lower pitch for more natural sound
       utterance.volume = 0.8;
 
-      // Try to use a female voice
+      // Try to use an Indian voice or female voice with Indian accent
       const voices = synthRef.current.getVoices();
-      const femaleVoice = voices.find(voice => 
+      const indianVoice = voices.find(voice => 
+        voice.name.toLowerCase().includes('india') ||
+        voice.name.toLowerCase().includes('indian') ||
+        voice.name.toLowerCase().includes('hindi') ||
+        voice.name.toLowerCase().includes('veena') ||
+        voice.name.toLowerCase().includes('priya') ||
+        voice.name.toLowerCase().includes('rita') ||
+        voice.name.toLowerCase().includes('kavya') ||
         voice.name.toLowerCase().includes('female') || 
         voice.name.toLowerCase().includes('woman') ||
-        voice.name.toLowerCase().includes('zira') || // Windows female voice
-        voice.name.toLowerCase().includes('samantha') || // macOS female voice
-        voice.name.toLowerCase().includes('karen') || // macOS female voice
-        voice.name.toLowerCase().includes('susan') || // macOS female voice
-        voice.name.toLowerCase().includes('victoria') // macOS female voice
+        voice.name.toLowerCase().includes('zira') ||
+        voice.name.toLowerCase().includes('samantha')
       );
       
-      if (femaleVoice) {
-        utterance.voice = femaleVoice;
-        console.log('Using female voice:', femaleVoice.name);
+      if (indianVoice) {
+        utterance.voice = indianVoice;
+        console.log('Using Indian voice:', indianVoice.name);
       } else {
-        console.log('No female voice found, using default');
+        console.log('No Indian voice found, using default with slower rate');
+        // If no Indian voice, use slower rate and lower pitch for more natural sound
+        utterance.rate = 0.6;
+        utterance.pitch = 0.9;
       }
 
       utterance.onstart = () => setIsSpeaking(true);
