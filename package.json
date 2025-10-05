@@ -1,0 +1,22 @@
+{
+  "name": "recursion-innovations-next",
+  "private": true,
+  "version": "1.0.0",
+  "description": "RecursX Innovations - AI-Powered Innovation Agency",
+  "scripts": {
+    "dev": "cd Frontend && npm run dev",
+    "build": "cd Frontend && npm run build",
+    "build:dev": "cd Frontend && npm run build:dev",
+    "lint": "cd Frontend && npm run lint",
+    "preview": "cd Frontend && npm run preview",
+    "install": "cd Frontend && npm install"
+  },
+  "workspaces": [
+    "Frontend"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
+
