@@ -1,4 +1,4 @@
-# RecursX Innovations - AI-Powered Innovation Agency
+# RecursX Innovations - AI-Powered Innovation
 
 ## Project Structure
 
